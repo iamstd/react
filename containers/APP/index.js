@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
-
+import addTODO from '../Components/AddTODO';
 export default class Pages extends Component {
     constructor() {
         super()
@@ -9,10 +9,13 @@ export default class Pages extends Component {
             disable: false
         }
     }
+    handlleAddTodo = (text) => {
+        
+    }
     render() {
         return (
             <div>
-              
+              <AddTODO onclick={this.handleClick} />
             </div>
         )
     }

@@ -1,2 +1,4 @@
 export const ORDER_REQUEST = ORDER_REQUEST;
 export const ORDER_SUCCESS = ORDER_SUCCESS;
+export const ADDTODO = ADDTODO;
+export const TODOLIST = TODOLIST;
