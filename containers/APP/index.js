@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import addTODO from '../Components/AddTODO';
-export default class Pages extends Component {
+import  orderaction from '../actions/order';
+export default class APP extends Component {
     constructor() {
         super()
         this.state = {
@@ -10,7 +11,8 @@ export default class Pages extends Component {
         }
     }
     handlleAddTodo = (text) => {
-        
+        const { dispatch, orderAction } = this.props;
+        orderAction.addTodo(text);
     }
     render() {
         return (
@@ -20,9 +22,10 @@ export default class Pages extends Component {
         )
     }
 }
-Pages.defaultProps = {
+APP.defaultProps = {
 
 }
-Pages.propTypes = {
+APP.propTypes = {
     
 }
+export default connect () (APP);
