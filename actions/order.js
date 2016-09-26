@@ -1,6 +1,7 @@
 import {
     ORDER_REQUEST,
-    ORDER_SUCCESS
+    ORDER_SUCCESS,
+    ADDTODO
 } from '../constants/order';
 
 
@@ -15,3 +16,16 @@ export function orderfetch(info) {
     }
 }
 
+export function addTodo(text) {
+    return {
+      type: ADDTODO,
+      text         
+    }
+}
+
+export function todoList(index) {
+  return {
+    type: TODOLIST,
+    index
+  }
+}
