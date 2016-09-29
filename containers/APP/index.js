@@ -3,8 +3,8 @@ import ReactDOM from 'react-dom';
 import addTODO from '../Components/AddTODO';
 import  orderaction from '../actions/order';
 export default class APP extends Component {
-    constructor() {
-        super()
+    constructor(props) {
+        super(props)
         this.state = {
             name: 1,
             disable: false
@@ -22,10 +22,10 @@ export default class APP extends Component {
         )
     }
 }
-APP.defaultProps = {
+APP.mapStateToProps = (state) => {
 
 }
-APP.propTypes = {
-    
+APP.mapProps = {
+    orderaction: this.props.order
 }
-export default connect () (APP);
+export default connect (mapStateToProps, mapActionstoProps) (APP);
