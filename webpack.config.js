@@ -1,9 +1,9 @@
 var webpack = require('webpack');
 var path = require('path');
-export modules = {
+export default {
     entry: [
-        'webpack/hot/only-dev-server',
-        path.resolve(___dirname, '.containers/APP/index.js')
+        'webpack/hot/dev-server',
+        path.resolve(__dirname, '.containers/APP/index.js')
     ],
     output:{
         path: path.resolve(__dirname, './build'),
@@ -11,8 +11,9 @@ export modules = {
     },
     modules:{
         loaders:[
-             { test: /\.jsx?$/, loaders: 'babel' },
-             { test: /\.css$/, loaders:['']},
+             { test: /\.jsx?$/, loader: 'babel' },
+             { test: /\.css$/, loaders: ['style', 'css', 'sass']},
+             { test: /\.(png|jpg)$/, loader: 'url?limit=102400'}
         ]
     }
 
