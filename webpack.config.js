@@ -1,22 +1,19 @@
 var webpack = require('webpack');
-
+var path = require('path');
 export modules = {
     entry: [
-        path: './components/',
-        'webpack-dev-server/client?http://0.0.0.0:9090',
         'webpack/hot/only-dev-server',
-        './static/js/entry.coffee'
+        path.resolve(___dirname, '.containers/APP/index.js')
     ],
-    outpus:{
-        path: '',
-        publicPath: "http://127.0.0.1:9090/static/dist/",
-        path: './static/dist/',
+    output:{
+        path: path.resolve(__dirname, './build'),
         filename: "bundle.js"
     },
     modules:{
-        loaders:{
-             test: /\.jsx?$/, loaders: ['react-hot', 'jsx?harmony'], include: path.join(__dirname, 'src'),
-        }
+        loaders:[
+             { test: /\.jsx?$/, loaders: 'babel' },
+             { test: /\.css$/, loaders:['']},
+        ]
     }
 
 }
