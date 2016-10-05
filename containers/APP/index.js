@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
-import addTODO from '../Components/AddTODO';
-import  orderaction from '../actions/order';
-export default class APP extends Component {
+import AddTODO from '../../components/AddTODO';
+import  orderActions from '../../actions/order';
+class APP extends Component {
     constructor(props) {
         super(props)
         this.state = {
@@ -10,22 +10,24 @@ export default class APP extends Component {
             disable: false
         }
     }
-    handlleAddTodo = (text) => {
-        const { dispatch, orderAction } = this.props;
-        orderAction.addTodo(text);
+    handlleAddTodo = text => {
+        const { dispatch, orderActions } = this.props;
+        orderActions.addTodo(text);
     }
     render() {
         return (
             <div>
-              <AddTODO onclick={this.handleClick} />
+              <AddTODO onclick={this.handlleAddTodo} />
             </div>
         )
     }
-}
-APP.mapStateToProps = (state) => {
+};
+const mapStateToProps = state => ({
 
-}
-APP.mapProps = {
-    orderaction: this.props.order
-}
-export default connect (mapStateToProps, mapActionstoProps) (APP);
+});
+
+const mapDispatchToProps = dispatch => ({
+    orderActions: bindActionCreators(orderActions, dispatch)
+});
+
+export default connect (mapStateToProps, mapDispatchToProps) (APP);

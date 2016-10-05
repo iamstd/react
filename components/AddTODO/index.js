@@ -13,6 +13,7 @@ export default class AddTODO extends Component {
     render(){
         return(
             <div>
+                <input type="text"/>
                 <input type='text' ref='add' placeholder="add what you love" />
                 <button onclick={this.handleClick}>Add</button>
             </div>

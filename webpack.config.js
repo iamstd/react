@@ -1,20 +1,22 @@
 var webpack = require('webpack');
 var path = require('path');
-export default {
+module.exports = {
     entry: [
         'webpack/hot/dev-server',
-        path.resolve(__dirname, '.containers/APP/index.js')
+        path.resolve(__dirname, './containers/APP/index.js')
     ],
     output:{
         path: path.resolve(__dirname, './build'),
         filename: "bundle.js"
     },
-    modules:{
+    module:{
         loaders:[
-             { test: /\.jsx?$/, loader: 'babel' },
+             { test: /\.js$/, loader: 'babel-loader' },
              { test: /\.css$/, loaders: ['style', 'css', 'sass']},
              { test: /\.(png|jpg)$/, loader: 'url?limit=102400'}
         ]
+    },
+    resolve: {
+      extensions: ['', '.js', '.jsx']
     }
-
 }
