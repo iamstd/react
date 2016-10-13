@@ -14,12 +14,17 @@ export default class AddTODO extends Component {
     };
   }
   render(){
-    return(
-      <div>
-        <input type="text"/>
-        <input type='text' ref='add' placeholder="add what you love" />
-        <button onclick={this.handleClick}>Add</button>
-      </div>
+    const { todo } = this.props;
+    return (
+      <ul>
+        {
+          todo.map((ele, index) => {
+            return(
+              <li key={key}>ele.text</li>
+            )
+          })
+        }
+      </ul>
     )
   }
 }
@@ -27,5 +32,6 @@ AddTODO.defaultProps = {
   onclick:() => {}
 }
 AddTODO.PropTypes = {
-  onclick: PropTypes.func.isrequired
+  onclick: PropTypes.func.isrequired,
+  todo: PropTypes.array.isrequired
 }
