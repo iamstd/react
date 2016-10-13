@@ -11,5 +11,4 @@ if (__SERVER__) {
     testData: require('./public/src/components/RecognizeeForm/testData').default
   };
 }
-
 export default config;
