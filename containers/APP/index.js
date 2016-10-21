@@ -18,6 +18,7 @@ class APP extends Component {
         return (
             <div>
               <AddTODO onclick={this.handlleAddTodo} />
+              <TodoList onToggle={} />
             </div>
         )
     }

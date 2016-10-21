@@ -4,7 +4,7 @@
   function addTodo (state = initialState, action) {
     switch (action.type) {
       case addTODO:
-      return action.text
+        return action.text
     }
   }
   

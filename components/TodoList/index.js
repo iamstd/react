@@ -7,11 +7,8 @@ export default class AddTODO extends Component {
       value: ''
     }
   }
-  handleClick = (e) => {
-    const value = this.refs.add.value.trim();
-    if (value) {
-      this.props.onclick(value);
-    };
+  handleItem = (e) => {
+    this.props.onToggle(index)
   }
   render(){
     const { todo } = this.props;
@@ -20,7 +17,7 @@ export default class AddTODO extends Component {
         {
           todo.map((ele, index) => {
             return(
-              <li key={key}>ele.text</li>
+              <li key={index} onClick={this.handleItem}>ele.text</li>
             )
           })
         }
@@ -29,9 +26,9 @@ export default class AddTODO extends Component {
   }
 }
 AddTODO.defaultProps = {
-  onclick:() => {}
+  onToggle:() => {}
 }
 AddTODO.PropTypes = {
-  onclick: PropTypes.func.isrequired,
+  onToggle: PropTypes.func.isrequired,
   todo: PropTypes.array.isrequired
 }

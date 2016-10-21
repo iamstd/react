@@ -11,38 +11,38 @@ const store = createstore(todoApp);
 import config from '../component-config';
 const { Com, testData } = config;
 
-class App extends Component {
-  render() {
-    const { data, activeIndex } = this.props;
-    console.log('props: ', data[activeIndex])
-    return <Com {...data[activeIndex]} />;
-  }
-}
-App.PropTypes = {
-  data: PropTypes.array.isRequired,
-  activeIndex: PropTypes.number.isRequired
-}
-App = connect(state => state)(App);
+// class App extends Component {
+//   render() {
+//     const { data, activeIndex } = this.props;
+//     console.log('props: ', data[activeIndex])
+//     return <Com {...data[activeIndex]} />;
+//   }
+// }
+// App.PropTypes = {
+//   data: PropTypes.array.isRequired,
+//   activeIndex: PropTypes.number.isRequired
+// }
+// App = connect(state => state)(App);
 
-const NEXT_PROPS = 'NEXT_PROPS';
-function nextProps() {
-  return {
-    type: 'NEXT_PROPS'
-  };
-}
-function rootReducer(state = { data: [], activeIndex: 0 }, action) {
-  switch (action.type) {
-    case NEXT_PROPS:
-      let activeIndex = state.activeIndex + 1;
-      if (activeIndex >= state.data.length) {
-        activeIndex = 0;
-      }
-      return { ...state, activeIndex}
+// const NEXT_PROPS = 'NEXT_PROPS';
+// function nextProps() {
+//   return {
+//     type: 'NEXT_PROPS'
+//   };
+// }
+// function rootReducer(state = { data: [], activeIndex: 0 }, action) {
+//   switch (action.type) {
+//     case NEXT_PROPS:
+//       let activeIndex = state.activeIndex + 1;
+//       if (activeIndex >= state.data.length) {
+//         activeIndex = 0;
+//       }
+//       return { ...state, activeIndex}
 
-    default:
-      return state;
-  }
-}
+//     default:
+//       return state;
+//   }
+// }
 
 
 render(
