@@ -1,7 +1,7 @@
   import order from '../actions/order';
 
 
-  function addTodo (state = initialState, action) {
+  function addTodo (state = 'SHOW_ALL', action) {
     switch (action.type) {
       case addTODO:
         return action.text
