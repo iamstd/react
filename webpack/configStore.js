@@ -8,8 +8,8 @@ import todoApp from '../reducers/order';
 const store = createstore(todoApp);
 
 // react组件全部从此处引入
-import config from '../component-config';
-const { Com, testData } = config;
+// import config from '../component-config';
+// const { Com, testData } = config;
 
 // class App extends Component {
 //   render() {
@@ -47,7 +47,7 @@ const { Com, testData } = config;
 
 render(
     <Provider store={store}>
-     <App />
+      <App />
     </Provider>,
     document.getElementById('root')
 )
