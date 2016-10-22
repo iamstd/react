@@ -20,13 +20,13 @@ class APP extends Component {
         return (
             <div>
               <AddTODO onClick={this.handlleAddTodo} />
-              11
+              <TodoList todo={this.props.todo|| this.state.todo} onToggle={(index) => this.handleToggle(index)}/>
             </div>
         )
     }
 };
 const mapStateToProps = state => ({
-  
+  todo: state.todo
 });
 
 const mapDispatchToProps = dispatch => ({
